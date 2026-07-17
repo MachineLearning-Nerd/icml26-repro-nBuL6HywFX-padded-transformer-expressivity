@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "title": "Padded Transformer Expressivity: Proof-Instance Audit",
+  "emoji": "🎯",
+  "space_id": null,
+  "paper": null,
+  "tags": [],
+  "updated_at": "2026-07-17T09:11:00+00:00",
+  "root": {
+    "slug": "index",
+    "title": "Padded Transformer Expressivity: Proof-Instance Audit",
+    "file": "pages/index.md",
+    "children": [
+      {
+        "slug": "conclusion",
+        "title": "Conclusion",
+        "file": "pages/conclusion/page.md",
+        "children": []
+      },
+      {
+        "slug": "c1-c2-volume-and-precision",
+        "title": "C1–C2 — Volume and precision",
+        "file": "pages/c1-c2-volume-and-precision/page.md",
+        "children": []
+      },
+      {
+        "slug": "c3-looped-circuits",
+        "title": "C3 — Looped circuits",
+        "file": "pages/c3-looped-circuits/page.md",
+        "children": []
+      },
+      {
+        "slug": "c4-ahat-to-smat",
+        "title": "C4 — AHAT to SMAT",
+        "file": "pages/c4-ahat-to-smat/page.md",
+        "children": []
+      },
+      {
+        "slug": "source-and-scope",
+        "title": "Source and scope",
+        "file": "pages/source-and-scope/page.md",
+        "children": []
+      },
+      {
+        "slug": "negative-controls",
+        "title": "Negative controls",
+        "file": "pages/negative-controls/page.md",
+        "children": []
+      }
+    ]
+  },
+  "agent_view_tokens": 1492,
+  "revision": "1784279460424842657"
+}
