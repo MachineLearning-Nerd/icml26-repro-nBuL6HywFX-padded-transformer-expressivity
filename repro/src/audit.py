@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from .circuits import loop_audit, precision_divide_audit
 from .fixedpoint import lemma31_audit
+from .theorem42 import theorem42_audit
 from .volume import volume_audit
 
 
@@ -30,6 +31,7 @@ def run_all() -> dict[str, object]:
     attention = lemma31_audit()
     loops = loop_audit()
     precision = precision_divide_audit()
+    theorem42 = theorem42_audit()
     scope = source_scope_audit()
     return {
         "paper": {"arxiv": "2605.30523", "openreview": "nBuL6HywFX"},
@@ -42,5 +44,5 @@ def run_all() -> dict[str, object]:
         "claim_3_looped_ACd_TCd_equivalence": loops,
         "claim_4_log_precision_SMAT_simulates_AHAT": attention,
         "claim_5_theory_only_scope": scope,
+        "current_challenge_claims_theorem_4_2": theorem42,
     }
-

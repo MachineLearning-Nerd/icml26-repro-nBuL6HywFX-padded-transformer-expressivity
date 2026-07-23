@@ -599,5 +599,153 @@
     ],
     "empirical_benchmark_or_training_protocol": false,
     "interpretation": "The paper is a theoretical characterization; its claims are theorem/proof claims rather than dataset, training, or benchmark results."
+  },
+  "current_challenge_claims_theorem_4_2": {
+    "inclusion_certificate": {
+      "proof_scope": "universal inclusion graph; no finite-N inference",
+      "claims": {
+        "claim_1": {
+          "statement": "Under Theorem 4.2's sufficient-volume and polynomial-width hypotheses, constant-precision polynomially padded L-uniform transformers equal L-uniform AC0.",
+          "volume_obligation": "b=Theta(1) and D*b=Omega(log N) imply D=Omega(log N)",
+          "lower_inclusion": [
+            {
+              "source": "L-uniform AC0",
+              "target": "LPT0 constant-precision log-width",
+              "reason": "Theorem 4.1 gives equality, hence this lower inclusion.",
+              "anchor": "Theorem 4.1 (London and Kanade 2025, Theorem 4.1)",
+              "kind": "cited theorem"
+            },
+            {
+              "source": "LPT0 constant-precision log-width",
+              "target": "LPT0 constant-precision sufficient-volume width D",
+              "reason": "At constant precision, D*b=Omega(log N) forces D=Omega(log N); the log-width construction embeds by zero padding unused coordinates.",
+              "anchor": "Definitions 2.1-2.3 plus residual-coordinate monotonicity",
+              "kind": "derived embedding"
+            }
+          ],
+          "upper_inclusion": [
+            {
+              "source": "LPT0 constant-precision sufficient-volume width D",
+              "target": "LPT0 constant-precision polynomial-width",
+              "reason": "Theorem 4.2 assumes D is at most polynomial.",
+              "anchor": "Theorem 4.2 hypothesis",
+              "kind": "assumption"
+            },
+            {
+              "source": "LPT0 constant-precision polynomial-width",
+              "target": "L-uniform AC0",
+              "reason": "Every constant-depth, constant-precision, polynomial-width layer decomposes into L-uniform AC0 lookup, iterated-addition, and threshold subcircuits.",
+              "anchor": "Lemma 4.2, constant-precision inclusion",
+              "kind": "paper proof audited"
+            }
+          ],
+          "both_directions_derived": true
+        },
+        "claim_2": {
+          "statement": "Under Theorem 4.2's polynomial-width hypothesis, log-precision polynomially padded L-uniform transformers equal L-uniform TC0 for every admissible width D.",
+          "volume_obligation": "b=Theta(log N) supplies Omega(log N) volume even at constant width",
+          "lower_inclusion": [
+            {
+              "source": "L-uniform TC0",
+              "target": "LPT0 log-precision constant-width",
+              "reason": "The constant-width circuit simulation replaces binary pointers by a constant number of two-dimensional unit positional encodings.",
+              "anchor": "Lemma 4.1 with the routing repair audited here",
+              "kind": "paper proof repaired"
+            },
+            {
+              "source": "LPT0 log-precision constant-width",
+              "target": "LPT0 log-precision width D",
+              "reason": "Any positive width D can embed the constant-width construction once the fixed construction width is available; unused coordinates are zero padded.",
+              "anchor": "Residual-coordinate monotonicity",
+              "kind": "derived embedding"
+            }
+          ],
+          "upper_inclusion": [
+            {
+              "source": "LPT0 log-precision width D",
+              "target": "LPT0 polynomial-precision polynomial-width",
+              "reason": "Log precision is polynomially bounded and Theorem 4.2 assumes D is at most polynomial.",
+              "anchor": "Notation in Section 2 and Theorem 4.2 hypothesis",
+              "kind": "assumption and embedding"
+            },
+            {
+              "source": "LPT0 polynomial-precision polynomial-width",
+              "target": "L-uniform TC0",
+              "reason": "Each attention and feedforward primitive is in L-uniform TC0; constant composition preserves the class.",
+              "anchor": "Lemma 4.2, polynomial-precision inclusion",
+              "kind": "paper proof audited"
+            }
+          ],
+          "both_directions_derived": true
+        }
+      },
+      "all_edges": [
+        {
+          "source": "L-uniform AC0",
+          "target": "LPT0 constant-precision log-width",
+          "reason": "Theorem 4.1 gives equality, hence this lower inclusion.",
+          "anchor": "Theorem 4.1 (London and Kanade 2025, Theorem 4.1)",
+          "kind": "cited theorem"
+        },
+        {
+          "source": "LPT0 constant-precision log-width",
+          "target": "LPT0 constant-precision sufficient-volume width D",
+          "reason": "At constant precision, D*b=Omega(log N) forces D=Omega(log N); the log-width construction embeds by zero padding unused coordinates.",
+          "anchor": "Definitions 2.1-2.3 plus residual-coordinate monotonicity",
+          "kind": "derived embedding"
+        },
+        {
+          "source": "LPT0 constant-precision sufficient-volume width D",
+          "target": "LPT0 constant-precision polynomial-width",
+          "reason": "Theorem 4.2 assumes D is at most polynomial.",
+          "anchor": "Theorem 4.2 hypothesis",
+          "kind": "assumption"
+        },
+        {
+          "source": "LPT0 constant-precision polynomial-width",
+          "target": "L-uniform AC0",
+          "reason": "Every constant-depth, constant-precision, polynomial-width layer decomposes into L-uniform AC0 lookup, iterated-addition, and threshold subcircuits.",
+          "anchor": "Lemma 4.2, constant-precision inclusion",
+          "kind": "paper proof audited"
+        },
+        {
+          "source": "L-uniform TC0",
+          "target": "LPT0 log-precision constant-width",
+          "reason": "The constant-width circuit simulation replaces binary pointers by a constant number of two-dimensional unit positional encodings.",
+          "anchor": "Lemma 4.1 with the routing repair audited here",
+          "kind": "paper proof repaired"
+        },
+        {
+          "source": "LPT0 log-precision constant-width",
+          "target": "LPT0 log-precision width D",
+          "reason": "Any positive width D can embed the constant-width construction once the fixed construction width is available; unused coordinates are zero padded.",
+          "anchor": "Residual-coordinate monotonicity",
+          "kind": "derived embedding"
+        },
+        {
+          "source": "LPT0 log-precision width D",
+          "target": "LPT0 polynomial-precision polynomial-width",
+          "reason": "Log precision is polynomially bounded and Theorem 4.2 assumes D is at most polynomial.",
+          "anchor": "Notation in Section 2 and Theorem 4.2 hypothesis",
+          "kind": "assumption and embedding"
+        },
+        {
+          "source": "LPT0 polynomial-precision polynomial-width",
+          "target": "L-uniform TC0",
+          "reason": "Each attention and feedforward primitive is in L-uniform TC0; constant composition preserves the class.",
+          "anchor": "Lemma 4.2, polynomial-precision inclusion",
+          "kind": "paper proof audited"
+        }
+      ]
+    },
+    "constant_width_routing": {
+      "assignments_checked": 79,
+      "printed_second_layer_swap_failures": 79,
+      "repaired_three_pointer_failures": 0,
+      "minimum_exact_arithmetic_target_margin": 2.2902790774992354e-12,
+      "repair_width": "three 2D pointer fields = six coordinates = O(1)",
+      "fixed_point_bridge": "Lemma B.4 and Corollary B.1 guarantee exact target softmax weights for sufficiently large N at b>=6 log N.",
+      "scientific_interpretation": "The printed projection sentence is inconsistent for non-coincident source/gate indices, but the theorem's constant-width lower inclusion survives the explicit O(1)-width routing repair."
+    }
   }
 }

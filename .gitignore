@@ -4,3 +4,8 @@ __pycache__/
 *.pyc
 .trackio/logbook/.serve.log
 
+outputs/
+vendor/
+wandb/
+.DS_Store
+upstream/

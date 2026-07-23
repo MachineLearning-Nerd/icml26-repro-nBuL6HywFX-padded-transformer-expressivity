@@ -8,6 +8,8 @@ from src.fixedpoint import (
     lemma31_audit,
     softmax_attention,
 )
+from src.theorem42 import inclusion_certificate, printed_swap_routes_to_gate, repaired_routing_audit, PointerToken
+from src.theorem42_obligations import run_obligation_audit
 from src.volume import decode_position, encode_position, sufficient_volume, volume_audit
 
 
@@ -64,3 +66,59 @@ def test_top_level_claim_record_is_complete():
             "claim_5_theory_only_scope",
         }
     )
+    assert "current_challenge_claims_theorem_4_2" in report
+
+
+def test_both_theorem42_equalities_have_two_inclusion_paths():
+    result = inclusion_certificate()
+    assert result["proof_scope"] == "universal inclusion graph; no finite-N inference"
+    assert all(claim["both_directions_derived"] for claim in result["claims"].values())
+    assert all(claim["lower_inclusion"] for claim in result["claims"].values())
+    assert all(claim["upper_inclusion"] for claim in result["claims"].values())
+
+
+def test_printed_second_layer_swap_is_a_fail_closed_control():
+    assert not printed_swap_routes_to_gate(PointerToken(position=4, source=2, gate=6))
+
+
+def test_constant_width_three_pointer_repair_routes_both_layers():
+    result = repaired_routing_audit()
+    assert result["assignments_checked"] > 50
+    assert result["printed_second_layer_swap_failures"] == result["assignments_checked"]
+    assert result["repaired_three_pointer_failures"] == 0
+    assert result["minimum_exact_arithmetic_target_margin"] > 0.0
+
+
+def test_theorem42_obligation_ledger_closes_both_equalities():
+    result = run_obligation_audit()
+    summary = result["summary"]
+    assert summary["closed"] == summary["total_obligations"]
+    assert summary["claim_1_equality_closed"]
+    assert summary["claim_2_equality_closed_with_repair"]
+    assert summary["unresolved_obligations"] == []
+
+
+def test_every_derived_obligation_has_an_executed_checker():
+    result = run_obligation_audit()
+    for item in result["obligations"]:
+        if item["kind"] not in {"hypothesis", "imported_primary_theorem"}:
+            assert item["checker"]
+            assert item["check_result"] is not None
+            assert item["closed"]
+
+
+def test_primary_sources_are_hash_pinned_and_anchored():
+    result = run_obligation_audit()
+    assert set(result["source_pins"]) == {"svete2026", "london2025"}
+    for source in result["source_pins"].values():
+        assert len(source["sha256"]) == 64
+        assert source["url"].startswith("https://arxiv.org/pdf/")
+        assert source["anchors"]
+
+
+def test_printed_route_is_rejected_not_silently_used():
+    result = run_obligation_audit()
+    assert result["summary"]["printed_lemma_4_1_route_rejected"]
+    repaired = next(item for item in result["obligations"] if item["key"] == "D-C2-ROUTING")
+    assert repaired["kind"] == "derived_repair"
+    assert repaired["check_result"]["printed_layer_2"]["universally_valid"] is False

@@ -1,8 +1,8 @@
 {
-  "space_id": null,
+  "space_id": "DineshAI/nBuL6HywFX",
   "emoji": "🎯",
   "created_at": "2026-07-17T09:10:43+00:00",
-  "title": "Padded Transformer Expressivity: Proof-Instance Audit",
+  "title": "Reproduction: Revisiting Padded Transformer Expressivity: Which Architectural Choices Matter and Which Don't",
   "paper": {
     "arxiv_id": "2605.30523",
     "openreview_id": "nBuL6HywFX"
@@ -15,5 +15,14 @@
   "private": false,
   "local_dashboards": {},
   "local_path_artifacts": [],
-  "last_page": "conclusion"
+  "last_page": "conclusion",
+  "local_artifacts": [
+    "reproduction-padded-transformer-expressivity/repro-bundle:v0",
+    "reproduction-padded-transformer-expressivity/repro-bundle:v1",
+    "reproduction-padded-transformer-expressivity/repro-bundle:v2",
+    "reproduction-padded-transformer-expressivity/repro-bundle:v3",
+    "reproduction-padded-transformer-expressivity/repro-bundle:v4",
+    "reproduction-padded-transformer-expressivity/repro-bundle:v5"
+  ],
+  "artifacts_bucket": "DineshAI/nBuL6HywFX-artifacts"
 }

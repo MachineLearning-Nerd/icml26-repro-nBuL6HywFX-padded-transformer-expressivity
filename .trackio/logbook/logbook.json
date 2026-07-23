@@ -1,54 +1,48 @@
 {
   "schema_version": 1,
-  "title": "Padded Transformer Expressivity: Proof-Instance Audit",
+  "title": "Reproduction: Revisiting Padded Transformer Expressivity: Which Architectural Choices Matter and Which Don't",
   "emoji": "🎯",
-  "space_id": null,
-  "paper": null,
-  "tags": [],
-  "updated_at": "2026-07-17T09:11:00+00:00",
+  "space_id": "DineshAI/nBuL6HywFX",
+  "paper": {
+    "arxiv_id": "2605.30523",
+    "openreview_id": "nBuL6HywFX"
+  },
+  "tags": [
+    "icml2026-repro",
+    "paper-nBuL6HywFX"
+  ],
+  "updated_at": "2026-07-19T12:37:00+00:00",
   "root": {
     "slug": "index",
-    "title": "Padded Transformer Expressivity: Proof-Instance Audit",
+    "title": "Reproduction: Revisiting Padded Transformer Expressivity: Which Architectural Choices Matter and Which Don't",
     "file": "pages/index.md",
     "children": [
+      {
+        "slug": "executive-summary",
+        "title": "Executive summary",
+        "file": "pages/executive-summary/page.md",
+        "children": []
+      },
+      {
+        "slug": "claim-1",
+        "title": "Claim 1",
+        "file": "pages/claim-1/page.md",
+        "children": []
+      },
+      {
+        "slug": "claim-2",
+        "title": "Claim 2",
+        "file": "pages/claim-2/page.md",
+        "children": []
+      },
       {
         "slug": "conclusion",
         "title": "Conclusion",
         "file": "pages/conclusion/page.md",
         "children": []
-      },
-      {
-        "slug": "c1-c2-volume-and-precision",
-        "title": "C1–C2 — Volume and precision",
-        "file": "pages/c1-c2-volume-and-precision/page.md",
-        "children": []
-      },
-      {
-        "slug": "c3-looped-circuits",
-        "title": "C3 — Looped circuits",
-        "file": "pages/c3-looped-circuits/page.md",
-        "children": []
-      },
-      {
-        "slug": "c4-ahat-to-smat",
-        "title": "C4 — AHAT to SMAT",
-        "file": "pages/c4-ahat-to-smat/page.md",
-        "children": []
-      },
-      {
-        "slug": "source-and-scope",
-        "title": "Source and scope",
-        "file": "pages/source-and-scope/page.md",
-        "children": []
-      },
-      {
-        "slug": "negative-controls",
-        "title": "Negative controls",
-        "file": "pages/negative-controls/page.md",
-        "children": []
       }
     ]
   },
-  "agent_view_tokens": 1492,
-  "revision": "1784279460424842657"
+  "agent_view_tokens": 5200,
+  "revision": "1784464620000000000"
 }

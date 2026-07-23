@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Theorem 4.2 proof audit</title>
+  <style>
+    :root { --ink:#18212b; --muted:#52616f; --paper:#f3f0e7; --card:#fff; --blue:#174a7e; --green:#18794e; --red:#a33a2b; }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--ink); background:var(--paper); font-family:ui-sans-serif,system-ui,sans-serif; }
+    main { max-width:1180px; margin:auto; padding:42px; }
+    header { border-left:8px solid var(--blue); padding-left:22px; }
+    h1 { margin:0 0 8px; font-size:clamp(2rem,5vw,4rem); line-height:1.02; }
+    h2 { color:var(--blue); margin-top:0; }
+    p,li { line-height:1.48; }
+    .sub { color:var(--muted); font-size:1.1rem; }
+    .grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin:32px 0; }
+    .card { background:var(--card); border:1px solid #d7d0c3; border-radius:14px; padding:24px; box-shadow:0 8px 22px #18212b10; }
+    .path { font-weight:750; font-size:1.15rem; color:var(--green); }
+    .warning { border-top:5px solid var(--red); }
+    .metric { font-size:2.3rem; font-weight:850; color:var(--green); }
+    code { background:#edf1f4; border-radius:4px; padding:2px 5px; }
+    footer { color:var(--muted); border-top:1px solid #cbc3b5; padding-top:16px; }
+    @media(max-width:760px){ main{padding:24px}.grid{grid-template-columns:1fr} }
+  </style>
+</head>
+<body>
+<main>
+  <header><h1>Theorem 4.2: kernel-checked repair</h1><p class="sub">Lean 4.32 reproduction audit · nBuL6HywFX · two universal circuit-class equalities</p></header>
+  <section class="grid">
+    <article class="card"><h2>Claim 1 · formal composition</h2><div class="metric">0 hidden imports</div><p>Source inclusions are explicit hypotheses. Lean checks extensional equivalence and exact preservation of every old residual coordinate under width padding.</p></article>
+    <article class="card"><h2>Claim 2 · universal repair</h2><div class="metric">3 exact theorems</div><p>For arbitrary positions and scores: layer 1 selects source, layer 2 collects destination, and the printed source route is rejected whenever source ≠ gate.</p></article>
+    <article class="card warning"><h2>Fail-closed kernel gate</h2><div class="metric">no sorryAx</div><p>The checker rejects proof escapes, pins Lean 4.32, hashes the source, and parses every <code>#print axioms</code> report.</p></article>
+    <article class="card"><h2>Constant-width repair</h2><div class="metric">6 coordinates</div><p>Self, source, and gate use exactly six pointer coordinates independent of input length; threshold arithmetic and induction close universally.</p></article>
+  </section>
+  <footer>11 Lean theorem reports · 16/16 tests pass · finite tables are regressions only · no paid compute</footer>
+</main>
+</body>
+</html>
